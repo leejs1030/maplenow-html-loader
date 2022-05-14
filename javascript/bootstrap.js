@@ -8,10 +8,12 @@ const bootstrap = (minTime) => {
   }/${now.getUTCDate()}`;
 
   const minDate = document.createAttribute("data-min-date");
+  const beforeYear = new Date(now);
+  beforeYear.setUTCFullYear(now.getUTCFullYear() - 1);
+  if (minTime <= beforeYear) minTime = beforeYear;
   minDate.value = `${minTime.getUTCFullYear()}/${
     minTime.getUTCMonth() + 1
   }/${minTime.getUTCDate()}`;
-  console.log(minDate.value);
   date.attributes.setNamedItem(minDate);
 
   // 현재 날짜 이후로 선택 불가
