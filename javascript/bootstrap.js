@@ -1,12 +1,17 @@
 const bootstrap = () => {
   const date = document.querySelector("#date input");
+
+  // 현재 날짜 이후로 선택 불가
   const maxDate = document.createAttribute("data-max-date");
   const now = new Date();
   maxDate.value = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
   date.attributes.setNamedItem(maxDate);
+
+  // 기본 값을 오늘 날짜로
   const value = document.createAttribute("value");
   value.value = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
   date.attributes.setNamedItem(value);
+
   Metro.utils.addLocale({
     "ko-KR": {
       calendar: {
@@ -47,5 +52,3 @@ const bootstrap = () => {
     },
   });
 };
-
-bootstrap();

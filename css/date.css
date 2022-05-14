@@ -23,3 +23,8 @@
 #selection > * {
   display: inline-block;
 }
+
+#time-msg {
+  position: absolute;
+  right: 0;
+}

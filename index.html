@@ -8,11 +8,11 @@
       href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css"
     />
     <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"
       defer
     ></script>
     <script
-      src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       defer
     ></script>
 
@@ -34,20 +34,21 @@
           data-format="%Y/%m/%d"
           data-min-date="2022/05/10"
           data-size="300px"
+          id="date-input"
         />
       </span>
       <span id="time" class="time"
         ><select name="time">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
+          <option value="00">00</option>
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
           <option value="10">10</option>
           <option value="11">11</option>
           <option value="12">12</option>
@@ -64,6 +65,7 @@
           <option value="23">23</option>
         </select></span
       >시
+      <span id="time-msg">(모든 시간은 한국 시간을 기준으로 합니다.)</span>
     </span>
 
     <div id="select-page">
