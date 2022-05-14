@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      const base = "https://ljs1030.github.io/maplenow-logs-html";
+      const loader = ({ year, month, date, hour, pageType, pageName }) => {
+        $("#html-position").load(
+          `${base}/${year}/${month}/${date}/${hour}/${pageType}/${pageName}.html #body-div`
+        );
+      };
+    </script>
+    <link rel="stylesheet" href="selection.css" />
+    <link rel="stylesheet" href="table.css" />
+  </head>
+  <body>
+    <div id="selection">
+      <input type="date" class="date" name="date" id="date" />
+      <input type="text" class="time" name="time" id="time" />
+      <div class="dropdown" id="page-dropdown">
+        <button class="dropbtn">페이지</button>
+        <div class="dropdown-content">
+          <div>큐브</div>
+          <div>어빌리티</div>
+          <div>치장</div>
+          <div>뷰티</div>
+          <div>펫</div>
+          <div>스타포스</div>
+        </div>
+      </div>
+    </div>
+    <div id="html-position"></div>
+  </body>
+</html>
