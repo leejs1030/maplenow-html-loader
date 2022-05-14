@@ -1,0 +1,20 @@
+#calendar {
+  display: none;
+  position: absolute;
+  left: 30px;
+}
+
+#date:hover > #calendar {
+  display: inline-block;
+  position: absolute;
+  z-index: 10;
+}
+
+#date {
+  padding-right: 300px;
+}
+
+#time {
+  display: inline-block;
+  width: 50px;
+}

@@ -3,19 +3,42 @@
   <head>
     <title>메이플 확률 로그</title>
     <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css"
+    />
     <script
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       defer
     ></script>
-    <script src="javascript/loader.js" defer></script>
+    <script
+      src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"
+      defer
+    ></script>
+
     <link rel="stylesheet" href="css/selection.css" />
     <link rel="stylesheet" href="css/table.css" />
     <link rel="stylesheet" href="css/dropdown.css" />
+    <link rel="stylesheet" href="css/date.css" />
+
+    <script src="javascript/loader.js" defer></script>
+    <script src="javascript/ko-KR.js" defer></script>
   </head>
   <body>
-    <div id="selection">
-      <input type="date" class="date" name="date" id="date" />
-      <input type="text" class="time" name="time" id="time" />
+    <span id="selection">
+      <span id="date" class="date">
+        <span>text</span>
+        <span
+          id="calendar"
+          data-role="calendar"
+          data-picker-mode="true"
+          data-min-date="2022/05/10"
+          data-max-date="2022/05/17"
+          data-locale="ko-KR"
+        ></span>
+      </span>
+      <span> <input type="text" class="time" name="time" id="time" /> 시 </span>
+
       <div id="select-page">
         <ul id="select-dropdown">
           <li>
@@ -119,7 +142,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    </span>
     <div id="html-position"></div>
   </body>
 </html>
