@@ -4,6 +4,7 @@ const regex = /.*\/[1-5]/;
 const selection = document.getElementById("select-page");
 const pos = $("#html-position");
 const dateInput = $("#date input");
+const minTime = 1652530199000; //서비스 시작 시점! 수정 필요.
 
 const loadHtml = ({ year, month, day, hour, page }) => {
   try {
@@ -23,7 +24,6 @@ const validateDate = ({ year, month, day, hour }) => {
   const now = new Date();
   const selected = new Date(`${year}-${month}-${day}T${hour}:10:00`).getTime(); // utc 0 시간
   const maxTime = now.getTime(); // utc 0 시간
-  const minTime = new Date("2022-05-14T14:09:59").getTime(); //서비스 시작 시점! 수정 필요.
   const beforeYear = (() => {
     const x = new Date(now);
     x.setUTCFullYear(now.getUTCFullYear() - 1);
