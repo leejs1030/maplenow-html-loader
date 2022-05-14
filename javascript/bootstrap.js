@@ -1,15 +1,21 @@
 const bootstrap = () => {
   const date = document.querySelector("#date input");
 
+  // 오늘 날짜 string
+  const now = new Date();
+  now.setUTCHours(now.getUTCHours() + 9);
+  const todayString = `${now.getUTCFullYear()}/${
+    now.getUTCMonth() + 1
+  }/${now.getUTCDate()}`;
+
   // 현재 날짜 이후로 선택 불가
   const maxDate = document.createAttribute("data-max-date");
-  const now = new Date();
-  maxDate.value = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
+  maxDate.value = todayString;
   date.attributes.setNamedItem(maxDate);
 
   // 기본 값을 오늘 날짜로
   const value = document.createAttribute("value");
-  value.value = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
+  value.value = todayString;
   date.attributes.setNamedItem(value);
 
   Metro.utils.addLocale({
