@@ -1,10 +1,11 @@
-bootstrap();
 const base = "https://ljs1030.github.io/maplenow-logs-html";
 const regex = /.*\/[1-5]/;
 const selection = document.getElementById("select-page");
 const pos = $("#html-position");
 const dateInput = $("#date input");
 const minTime = 1652530199000; //서비스 시작 시점! 수정 필요.
+
+bootstrap(new Date(minTime + 9 * 60 * 60 * 1000));
 
 const loadHtml = ({ year, month, day, hour, page }) => {
   try {

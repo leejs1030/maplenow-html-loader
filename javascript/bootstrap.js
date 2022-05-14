@@ -1,12 +1,18 @@
-const bootstrap = () => {
+const bootstrap = (minTime) => {
   const date = document.querySelector("#date input");
-
   // 오늘 날짜 string
   const now = new Date();
   now.setUTCHours(now.getUTCHours() + 9);
   const todayString = `${now.getUTCFullYear()}/${
     now.getUTCMonth() + 1
   }/${now.getUTCDate()}`;
+
+  const minDate = document.createAttribute("data-min-date");
+  minDate.value = `${minTime.getUTCFullYear()}/${
+    minTime.getUTCMonth() + 1
+  }/${minTime.getUTCDate()}`;
+  console.log(minDate.value);
+  date.attributes.setNamedItem(minDate);
 
   // 현재 날짜 이후로 선택 불가
   const maxDate = document.createAttribute("data-max-date");
