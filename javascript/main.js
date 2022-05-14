@@ -1,10 +1,11 @@
-bootstrap();
 const base = "https://ljs1030.github.io/maplenow-logs-html";
 const regex = /.*\/[1-5]/;
 const selection = document.getElementById("select-page");
 const pos = $("#html-position");
 const dateInput = $("#date input");
 const minTime = 1652530199000; //서비스 시작 시점! 수정 필요.
+
+bootstrap(new Date(minTime + 9 * 60 * 60 * 1000));
 
 const loadHtml = ({ year, month, day, hour, page }) => {
   try {
@@ -16,7 +17,10 @@ const loadHtml = ({ year, month, day, hour, page }) => {
           : ""
     );
   } catch (err) {
-    console.log("you failed!");
+    alert(
+      "내부 오류입니다. 다음에 뜨는 안내 창을 최대한 자세히 찍거나 복사하여 문의해 주세요."
+    );
+    alert(JSON.stringify(err, Object.getOwnPropertyNames(err)));
   }
 };
 
@@ -29,10 +33,6 @@ const validateDate = ({ year, month, day, hour }) => {
     x.setUTCFullYear(now.getUTCFullYear() - 1);
     return x.getTime();
   })();
-  console.log(new Date(selected));
-  console.log(new Date(maxTime));
-  console.log(new Date(minTime));
-  console.log(new Date(beforeYear));
   if (selected >= maxTime) {
     alert("아직 로그가 작성되지 않은 시점입니다!");
     return false;
@@ -49,8 +49,6 @@ const validateDate = ({ year, month, day, hour }) => {
 selection.addEventListener("click", (e) => {
   const page = e.target.id;
   const [year, month, day] = dateInput.val().split("/");
-  console.log(year);
-  console.log(dateInput.val().split("/"));
   const hour = $("#time > select").val();
   if (regex.test(page) && validateDate({ year, month, day, hour })) {
     loadHtml({ year, month, day, hour, page });
