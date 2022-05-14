@@ -11,3 +11,5 @@ selection.addEventListener("click", (e) => {
   const page = e.target.id;
   if (regex.test(page)) console.log(page);
 });
+
+const date = document.getElementById("date");

@@ -11,10 +11,15 @@
 }
 
 #date {
-  padding-right: 300px;
+  /*padding-right: 300px;*/
+  display: inline-block;
 }
 
 #time {
   display: inline-block;
   width: 50px;
+}
+
+#selection > * {
+  display: inline-block;
 }
