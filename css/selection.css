@@ -1,4 +1,11 @@
-/*#date {*/
-/*  margin-right: 50px;*/
-/*  margin-left: 50px;*/
-/*}*/
+#selection > * {
+  align-content: center;
+  text-align-all: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+}
+
+#date {
+  align-self: center;
+}

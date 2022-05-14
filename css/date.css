@@ -17,7 +17,7 @@
 
 #time {
   display: inline-block;
-  width: 50px;
+  /*height: 300px;*/
 }
 
 #selection > * {
