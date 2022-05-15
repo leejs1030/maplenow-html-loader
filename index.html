@@ -16,17 +16,17 @@
       defer
     ></script>
 
-    <link rel="stylesheet" href="css/selection.css" />
-    <link rel="stylesheet" href="css/table.css" />
-    <link rel="stylesheet" href="css/dropdown.css" />
-    <link rel="stylesheet" href="css/date.css" />
+    <link rel="stylesheet" href="./css/selection.css" />
+    <link rel="stylesheet" href="./css/table.css" />
+    <link rel="stylesheet" href="./css/dropdown.css" />
+    <link rel="stylesheet" href="./css/date.css" />
 
-    <script src="javascript/KRDate.js" defer></script>
-    <script src="javascript/bootstrap.js" defer></script>
-    <script src="javascript/main.js" defer></script>
+    <script src="./javascript/bootstrap.js" defer></script>
+    <script src="./javascript/main.js" defer></script>
   </head>
+
   <body>
-    <span id="selection">
+    <div id="selection">
       <span id="date" class="date">
         <input
           type="text"
@@ -66,9 +66,12 @@
           <option value="23">23</option>
         </select></span
       >시
-      <span id="time-msg">(모든 시간은 한국 시간을 기준으로 합니다.)</span>
-    </span>
-
+      <div id="time-msg">
+        모든 시간은 한국 시간 기준입니다.<br />2022/05/14 21시부터 조회
+        가능합니다.
+      </div>
+    </div>
+    <br />
     <div id="select-page">
       <ul id="select-dropdown">
         <li>
